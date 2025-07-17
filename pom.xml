@@ -15,5 +15,7 @@
 	<modules>
 		<module>chapter01</module>
 		<module>drill01</module>
+		<module>drill02</module>
+		<module>drill03</module>
 	</modules>
 </project>

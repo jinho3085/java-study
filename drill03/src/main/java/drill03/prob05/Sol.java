@@ -14,6 +14,11 @@ public class Sol {
 	public static void main(String[] args) {
 		char ch = 'G';
 		// if 조건에 문자 범위 사용
+		if(ch >= 'A' && ch <= 'Z') {
+			System.out.println("대문자");
+		} else if (ch >='a' && ch <= 'z') {
+			System.out.println("소문자");
+		}
 	}
 
 }

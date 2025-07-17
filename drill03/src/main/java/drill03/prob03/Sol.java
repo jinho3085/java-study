@@ -15,6 +15,14 @@ public class Sol {
 		int a = 12;
 		int b = 27;
 		// if ~ else if ~ else 사용
+		
+		if(a > b) {
+			System.out.println(a);
+		} else if(a < b) {
+			System.out.println(b);
+		} else {
+			System.out.println("같습니다");
+		}
 	}
 
 }

@@ -14,7 +14,8 @@ package drill02.prob01;
 public class Sol {
 
 	public static void main(String[] args) {
-		String public = "hello";
+		String name = "hello";
+		System.out.println(name);
 	}
 
 }

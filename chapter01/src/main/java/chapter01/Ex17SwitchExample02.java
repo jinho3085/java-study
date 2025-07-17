@@ -3,7 +3,7 @@ package chapter01;
 public class Ex17SwitchExample02 {
 
 	public static void main(String[] args) {
-		int score = 78;
+		int score = 64;
 		
 		switch(score / 10) {	
 		case 9 :

@@ -1,5 +1,7 @@
 package exercise01.prob10;
 
+import java.util.Arrays;
+
 public class Sol {
 
 	public static void main(String[] args) {
@@ -7,19 +9,15 @@ public class Sol {
 		int count = data.length;
 
 		System.out.println("Before Sort.");
-
-		for (int i = 0; i < count; i++) {
-			System.out.print(data[i] + " ");
-		}
+		System.out.print("Before:" + Arrays.toString(data));
+		
 
 		//
 		// 정렬 알고리즘이 적용된 코드를 여기에 작성합니다.
 		//
 
-		System.out.println("\nAfter Sort.");
+		System.out.println("After:" + Arrays.toString(data));
 
-		for (int i = 0; i < count; i++) {
-			System.out.print(data[i] + " ");
-		}		
+		
 	}	
 }

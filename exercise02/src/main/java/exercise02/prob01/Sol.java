@@ -15,7 +15,7 @@ public class Sol {
 
 		System.out.print("증가 간: ");
 		int step = scanner.nextInt();
-
+		
 		scanner.close();
 
 		

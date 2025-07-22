@@ -9,5 +9,4 @@ public class ProbMain {
 		new Animal();
 		System.out.println("현재 동물 수: ");
 	}
-s
 }

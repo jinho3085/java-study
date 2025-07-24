@@ -14,6 +14,8 @@ public class Ex02Identifier {
 		// int class = 1;	// 예약이 사용
 		
 		System.out.print(number);
+		
+		Object o = null;
 	}
 
 }

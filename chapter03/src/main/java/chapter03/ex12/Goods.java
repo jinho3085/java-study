@@ -17,7 +17,7 @@ public class Goods {
 		this.countStock = countStock;
 		this.countSold = countSold;
 	}
-
+	
 	public int calcDiscountPrice(float percentage) {
 		return price - (int)(price * percentage);
 	}

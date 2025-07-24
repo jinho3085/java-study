@@ -3,12 +3,11 @@ package chapter03.ex14;
 
 public class Goods {
 	private String name;
-	private int price;
+	protected int price;
 	private int countStock;
 	private int countSold;
 	
 	public Goods() {
-		
 	}
 	
 	public Goods(String name, int price, int countStock, int countSold) {

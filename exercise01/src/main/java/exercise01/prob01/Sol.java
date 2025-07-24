@@ -10,7 +10,6 @@ public class Sol {
 		System.out.print("정수: ");
 		int n = scanner.nextInt();
 		
-		
 		scanner.close();
 	}
 

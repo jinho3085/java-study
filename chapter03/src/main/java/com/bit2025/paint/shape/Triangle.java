@@ -1,4 +1,4 @@
-package chapter03.paint;
+package com.bit2025.paint.shape;
 
 public class Triangle extends shape {
 	@Override

@@ -1,4 +1,6 @@
-package chapter03.paint;
+package com.bit2025.paint.canvas;
+
+import com.bit2025.paint.main.Drawable;
 
 public class Canvas {
 //	public void drawPoint(Point point) {

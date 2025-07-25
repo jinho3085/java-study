@@ -1,4 +1,4 @@
-package chapter03.paint;
+package com.bit2025.paint.point;
 
 public class ColorPoint extends Point {
 	

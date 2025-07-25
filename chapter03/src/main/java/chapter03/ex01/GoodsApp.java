@@ -1,5 +1,6 @@
 package chapter03.ex01;
 
+
 public class GoodsApp {
 
 	public static void main(String[] args) {

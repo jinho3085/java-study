@@ -1,4 +1,4 @@
-package chapter03.paint;
+package com.bit2025.paint.shape;
 
 public class Circle extends shape {
 	private int radius;

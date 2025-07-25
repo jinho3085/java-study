@@ -3,6 +3,7 @@ package com.bit2025.paint.point;
 import com.bit2025.paint.main.Drawable;
 
 public class Point implements Drawable {
+	
 	private int x;
 	private int y;
 	
@@ -47,7 +48,11 @@ public class Point implements Drawable {
 	public void setY(int y) {
 		this.y = y;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "Point [x=" + x + ", y=" + y + "]";
+	}
 	
 	
 	

@@ -20,6 +20,12 @@ public class Sol {
 
 		// equals() 비교
 		// 중첩 if 또는 논리연산자(&&, ||) 사용
+		
+		if (id.equals(inputId) && pw.equals(inputPw)) {
+			System.out.println("로그인 성공");
+		} else {
+			System.out.println("로그인 실패");
+		}
 	}
 
 }

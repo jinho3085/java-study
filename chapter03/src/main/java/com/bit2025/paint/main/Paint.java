@@ -4,12 +4,13 @@ import java.io.Serializable;
 
 import com.bit2025.paint.canvas.Canvas;
 import com.bit2025.paint.point.ColorPoint;
-import com.bit2025.paint.point.Point;
 import com.bit2025.paint.shape.Circle;
 import com.bit2025.paint.shape.Rectnagle;
 import com.bit2025.paint.shape.Triangle;
 import com.bit2025.paint.shape.shape;
 import com.bit2025.paint.text.GraphicText;
+
+import com.bit2025.paint.point.*;
 
 public class Paint {
 

@@ -15,8 +15,6 @@ public class ObjectMethodExample01 {
 		System.out.println(goods.toString());	// getClass().getName() + "@" + hashCode()
 		System.out.println(goods);
 		
-		
-		
 	}
 
 }

@@ -5,9 +5,9 @@ import java.io.Serializable;
 import com.bit2025.paint.canvas.Canvas;
 import com.bit2025.paint.point.ColorPoint;
 import com.bit2025.paint.shape.Circle;
-import com.bit2025.paint.shape.Rectnagle;
+import com.bit2025.paint.shape.Rectangle;
 import com.bit2025.paint.shape.Triangle;
-import com.bit2025.paint.shape.shape;
+import com.bit2025.paint.shape.Shape;
 import com.bit2025.paint.text.GraphicText;
 
 import com.bit2025.paint.point.*;
@@ -41,7 +41,7 @@ public class Paint {
 		
 //		canvas.drawRectngale(new Rectngale());
 //		canvas.drawShape(new Rectnagle());
-		canvas.draw(new Rectnagle());
+		canvas.draw(new Rectangle());
 		
 //		canvas.drawCircle(new Circle());
 //		canvas.drawShape(new Circle());
@@ -53,7 +53,7 @@ public class Paint {
 		
 		Circle c = new Circle();
 		System.out.println(c instanceof Object);
-		System.out.println(c instanceof shape);
+		System.out.println(c instanceof Shape);
 		System.out.println(c instanceof Circle);
 		
 		// 오류: 컴파일 타임에 타입 검사도 하기 떄문에 상속 하이어라키(hierachy) 전혀 없으면 에러 발생

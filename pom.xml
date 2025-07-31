@@ -26,5 +26,6 @@
 		<module>exercise03</module>
 		<module>exercise04</module>
 		<module>chapter04</module>
+		<module>network</module>
 	</modules>
 </project>

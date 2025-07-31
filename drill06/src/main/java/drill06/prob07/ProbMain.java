@@ -12,5 +12,6 @@ public class ProbMain {
 		customer.setAddress(address);
 		
 		/* 출력 코드 작성 */
+		customer.printInfo(); // 출력
 	}
 }

@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.StringTokenizer;
 
 public class StreamChainingPhoneList {
 
@@ -30,14 +31,43 @@ public class StreamChainingPhoneList {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		System.out.println(sdf.format(new Date(file.lastModified())));
 	
+		System.out.println("========== 전화번호 ===========");
+		
 		// 1. 기반 스트림
 		FileInputStream fis = new FileInputStream(file);
-		// 2.보조 스트림1
+		
+		// 2.보조 스트림1: byte|byte|byte| -> char
+		
 		InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
-		// 3.보조 스트림2
+		
+		// 3.보조 스트림2:	char1|char2|char3|char4|\n -> "char1char2char3char4	
 		br = new BufferedReader(isr);
 		
 		// 4. 처리
+		String line = null;
+		while((line = br.readLine()) != null) {
+			StringTokenizer st = new StringTokenizer(line, "\t ");
+			
+			int index = 0;
+			while(st.hasMoreElements()) {
+				String token = st.nextToken();
+				
+				System.out.print(token);
+				
+				if(index == 0) {
+					System.out.print("  :  ");
+				} else if(index == 1) { // 전화번호1
+					System.out.print("-");
+				} else if(index == 2) { // 전화번호2
+					System.out.print("-");
+				} else { // 전화번호3
+					System.out.print("\n");
+				}
+				index++;
+			}
+			
+			System.out.println(line);
+		}
 		
 	} catch (UnsupportedEncodingException e) {
 		System.out.println("error: " + e);

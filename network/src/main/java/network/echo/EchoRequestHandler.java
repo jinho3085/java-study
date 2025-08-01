@@ -7,63 +7,51 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.util.Scanner;
+import java.net.SocketException;
 
-public class EchoClient {
+public class EchoRequestHandler extends Thread {
+	private Socket socket;
 
-	private static final String SERVER_IP = "127.0.0.1";
+	public EchoRequestHandler(Socket socket) {
+		this.socket = socket;
+	}
 
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		Socket socket = null;
-
+	@Override
+	public void run() {
 		try {
-			socket = new Socket();
-
-			socket.connect(new InetSocketAddress(SERVER_IP, EchoServer.PORT));
+			InetSocketAddress inetSocketAddress = (InetSocketAddress) socket.getRemoteSocketAddress();
+			String remoteHostAddress = inetSocketAddress.getAddress().getHostAddress();
+			int remotePort = inetSocketAddress.getPort();
+			EchoServer.log("connected by client[" + remoteHostAddress + ":" + remotePort + "]");
 
 			PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"), true);
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 
 			while (true) {
-				System.out.println(">> ");
-				String line = scanner.nextLine();
-
-				if ("quit".equals(line)) {
-					break;
-				}
-
-				pw.println(line);
 				String data = br.readLine();
 
 				if (data == null) {
-					log("closed by server");
+					EchoServer.log("closed by client");
 					break;
 				}
 
-				System.out.println("<< " + data);
+				EchoServer.log("received: " + data);
 
+				pw.println(data);
 			}
-
+		} catch (SocketException e) {
+			EchoServer.log("Socket Exception: " + e);
 		} catch (IOException e) {
-			log("error: " + e);
+			EchoServer.log("error: " + e);
 		} finally {
 			try {
 				if (socket != null && !socket.isClosed()) {
 					socket.close();
 				}
-				if (scanner != null) {
-					scanner.close();
-				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-
-	}
-
-	private static void log(String message) {
-		System.out.println("[Echo Client]" + message);
 	}
 
 }

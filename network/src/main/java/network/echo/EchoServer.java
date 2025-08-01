@@ -11,7 +11,7 @@ import java.net.Socket;
 import java.net.SocketException;
 
 public class EchoServer {
-	public static final int PORT = 9000;
+	public static final int PORT = 9020;
 
 	public static void main(String[] args) {
 		ServerSocket serverSocket = null;
@@ -21,8 +21,8 @@ public class EchoServer {
 			serverSocket.bind(new InetSocketAddress("0.0.0.0", PORT));
 			log("starts...[port:" + PORT + "]");
 			
-			Socket socket = serverSocket.accept();
-
+				Socket socket = serverSocket.accept();
+			
 			try {
 				InetSocketAddress inetSocketAddress = (InetSocketAddress) socket.getRemoteSocketAddress();
 				String remoteHostAddress = inetSocketAddress.getAddress().getHostAddress();

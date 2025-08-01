@@ -9,7 +9,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Echoclient {
+public class EchoClient {
 
 	private static final String SERVER_IP = "127.0.0.1";
 

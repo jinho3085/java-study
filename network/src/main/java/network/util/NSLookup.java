@@ -11,15 +11,17 @@ public class NSLookup {
 		try {
 
 			while (true) {
-				System.out.println(">> ");
+				System.out.print(">> ");
 				String line = scanner.nextLine();
 
 				if ("quit".equals(line)) {
 					break;
 				}
 
-				InetAddress[] InetAddresses = InetAddress.getAllByName(line);
-				System.out.println(InetAddresses.length);
+				InetAddress[] inetAddresses = InetAddress.getAllByName(line);
+				for (InetAddress inetAddress : inetAddresses) {
+					System.out.println(inetAddress.getHostAddress());
+				}
 			}
 		} catch (UnknownHostException ex) {
 			System.out.println("알려진 호스트가 없습니다.");

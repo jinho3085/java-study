@@ -26,7 +26,7 @@ public class EchoClient {
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 
 			while (true) {
-				System.out.println(">> ");
+				System.out.print(">> ");
 				String line = scanner.nextLine();
 
 				if ("quit".equals(line)) {

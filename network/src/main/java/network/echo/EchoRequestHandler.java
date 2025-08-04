@@ -36,8 +36,7 @@ public class EchoRequestHandler extends Thread {
 				}
 
 				EchoServer.log("received: " + data);
-
-				pw.println(data);
+				pw.println(data); // 클라이언트에게 다시 보냄
 			}
 		} catch (SocketException e) {
 			EchoServer.log("Socket Exception: " + e);

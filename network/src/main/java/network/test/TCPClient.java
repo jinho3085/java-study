@@ -9,10 +9,10 @@ import java.net.SocketTimeoutException;
 
 public class TCPClient {
 	private static final String SERVER_IP = "127.0.0.1";
-
+	
 	public static void main(String[] args) {
 		Socket socket = null;
-
+		
 		try {
 			// 1. Socket 생성
 			socket = new Socket();
@@ -21,7 +21,7 @@ public class TCPClient {
 			int rcvBufferSize = socket.getReceiveBufferSize();
 			int sndBufferSize = socket.getSendBufferSize();
 			System.out.println(rcvBufferSize + ":" + sndBufferSize);
-			
+
 			// 1-2. 소켓 버퍼 사이즈 변경
 			socket.setReceiveBufferSize(1024 * 10);
 			socket.setSendBufferSize(1024 * 10);
@@ -29,43 +29,43 @@ public class TCPClient {
 			rcvBufferSize = socket.getReceiveBufferSize();
 			sndBufferSize = socket.getSendBufferSize();
 			System.out.println(rcvBufferSize + ":" + sndBufferSize);
-
+			
 			// 1-3. SO_NODELAY(Nagle Algorithm off)
 			socket.setTcpNoDelay(true);
-			
+
 			// 1-4. SO_TIMEOUT
 			socket.setSoTimeout(2000); // 1 seconds
 			
 			// 2. 서버 연결
 			socket.connect(new InetSocketAddress(SERVER_IP, TCPServer.PORT));
-
+			
 			// 3. IO Stream 가져오기
 			InputStream is = socket.getInputStream();
 			OutputStream os = socket.getOutputStream();
-
+			
 			// 4. 쓰기
 			String data = "Hello World";
 			os.write(data.getBytes("UTF-8"));
-
+			
 			// 5. 읽기
 			byte[] buffer = new byte[256];
 			int readByteCount = is.read(buffer);
 			
-			if (readByteCount == -1) {
+			if(readByteCount == -1) {
 				System.out.println("[client] closed by server");
 				return;
 			}
-
+			
 			data = new String(buffer, 0, readByteCount, "utf-8");
 			System.out.println("[client] received: " + data);
-
-		} catch (SocketTimeoutException e) {
+			
+		} catch(SocketTimeoutException e) {
 			System.out.println("[client] timeout!!");
-		} catch (IOException e) {
+		} catch(IOException e) {
 			System.out.println("[client] error: " + e);
 		} finally {
 			try {
-				if (socket != null && !socket.isClosed()) {
+				if(socket != null && !socket.isClosed()) {
 					socket.close();
 				}
 			} catch (IOException e) {

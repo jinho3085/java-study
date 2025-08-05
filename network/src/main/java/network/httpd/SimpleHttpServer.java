@@ -14,8 +14,8 @@ public class SimpleHttpServer {
 
 		try {
 			serverSocket = new ServerSocket();
-			   
-			serverSocket.bind( new InetSocketAddress( "0.0.0.0", PORT) );
+
+			serverSocket.bind(new InetSocketAddress("0.0.0.0", PORT));
 			consoleLog("starts...[port:" + PORT + "]");
 
 			while (true) {
@@ -37,6 +37,6 @@ public class SimpleHttpServer {
 	}
 
 	public static void consoleLog(String message) {
-		System.out.println("[HttpServer#" + Thread.currentThread().getId()  + "] " + message);
+		System.out.println("[HttpServer#" + Thread.currentThread().getId() + "] " + message);
 	}
 }
